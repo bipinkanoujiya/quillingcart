@@ -1,0 +1,896 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+  
+  
+ 
+  <title>Quilling Cart</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="bootstrap-3.3.7-dist/jquery/jquery-3.2.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <link href="Content/font-awesome.min.css" rel="stylesheet" />        
+      <style>
+          * {
+          
+          margin:0px;
+          padding:0px;
+          }
+                .right1 {
+                    
+                     margin-left:0px;
+                }
+                .left1 {
+             
+              float:right;
+             margin:0px;
+           margin-top:50px;
+                color:white;
+                margin-right:-10px;
+                }
+                #es
+                {
+                float:left;
+                height:70px;
+                 margin-left:-10px;
+                width:200px;
+                margin-top:0px;
+                }
+                
+          
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+      margin-bottom:-12px;
+      
+     
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border:solid 1px ridge;
+     
+     
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 90%;
+     
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: 0px auto auto auto;
+      height:700px;
+     
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #fff;
+  }
+  .carousel-indicators li {
+      border-color: #fff;
+  }
+  .carousel-indicators li.active {
+      background-color: #fff;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+ 
+  
+  .social-share.fixed-right {
+    position: fixed;
+    right: 30px;
+    top: 25%;
+    z-index: 9999;
+}
+  
+  .social-share.fixed-right img {
+    vertical-align: middle;
+    height: 33px;
+}
+  
+  
+  
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}.social-share li {
+    list-style-type: none;
+    margin-bottom: 12px;
+}
+  
+  .navbar {
+      margin-bottom: 0;
+      background-color:white;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color:black !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color:#f4511e !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+          /*.loader {
+          
+          height:50px;
+          width:100px;
+          color:red;
+          }
+          @keyframes spin {
+              0% {
+                  transform: rotate(0deg);
+              }
+                100%{  transform: rotate(360deg);
+              }
+
+          }*/
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  #r{
+     height: 50px;
+    width: 150px;
+    margin-left: -90px;
+    margin:-19px;
+    margin-top:-15px;
+   background-color:white;
+}
+              #TextBox1 {
+              margin-top:25px;
+             
+              display:table;
+              }
+              #Button1 {
+              margin-top:2px;
+                margin-left:auto;
+                    margin-right:auto;
+                     
+              }
+             
+              .button {
+              background-color:#f4511e;
+              }
+
+
+
+
+              #footer ul > li {
+    display: inline-block;
+    margin: 0 7.5px;
+}
+              
+   
+.btn-primary {
+   
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+             #footer {
+              padding-top:30px;
+              padding-bottom:0px;
+             
+              background:black;
+              display: block;
+             
+             
+              
+          }
+            #footer ul {
+        list-style: none;
+    padding: 0;
+    margin: 0 -7.5px;
+    padding-bottom:30px;
+}
+
+
+.col-sm-6 {
+    width: 50%;
+    color:white;
+}
+#footer .social-icons {
+    float: right;
+}
+          .contactbuttonalign {
+          text-align:center;
+          }
+          #contactbutton {
+          
+           background-color:#f4511e;
+        color:white;
+
+          }
+          #Getintouchbutton {
+          
+            background-color:#f4511e;
+        color:white;
+          }
+          #shopnow,#shopnow1,#shopnow2,#shopnow3 {
+             
+  margin-top:auto;
+   font-size: 24px;
+          margin-bottom:170px;
+                    color:white;
+                padding: 15px 20px;
+    background:rgba(177, 61, 172, 1);
+   
+  
+    text-shadow: none;
+font-weight: 500;
+text-transform: uppercase;
+border: none;
+font:bold;
+font-family:'Times New Roman';
+
+         
+         border-color:whitesmoke;
+          border-style:solid;
+          box-shadow:inset;
+          }      
+              #shopnow:hover {
+             
+      color:white !important;
+      background-color:#f4511e !important;
+  }
+
+              
+            
+          #contact {
+          background-color:#f6f6f6;
+          }
+          .thumbnail {
+          
+          height:600px;
+          }
+          
+        
+         
+     
+        
+  </style>
+      <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+      
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+      <form runat="server">
+    <div class="social-share fixed-right">
+        <ul>
+            <li><a href="https://www.facebook.com/Lcknowites/" target="#">
+                <img src="bootstrap-3.3.7-dist/Images/fb.png" alt="fb"></a></li>
+            <li><a href="https://www.instagram.com/helping_india_foundation/" target="#">
+                <img src="bootstrap-3.3.7-dist/Images/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://www.youtube.com/watch?v=dd8na8o_PF0&amp;t=24s" target="#">
+                <img src="bootstrap-3.3.7-dist/Images/youtube.png" alt="youtube" width="36"></a></li>
+        </ul>
+    </div>
+  
+          <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><img src="bootstrap-3.3.7-dist/Images/sdsdsdsd.png" id="r"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about"><span class="glyphicon glyphicon-globe"></span>ABOUT</a></li>
+        <li><a href="#services"><span class="glyphicon glyphicon-signal"></span>SERVICES</a></li>
+        <li><a href="#portfolio"><span class="glyphicon glyphicon-tasks"></span>PORTFOLIO</a></li>
+        <li><a href="#Team"><span class="glyphicon glyphicon-grain" ></span>TEAM</a></li>
+        <li><a href="#contact"><span class="glyphicon glyphicon-user"></span>CONTACT</a></li>
+            <li><a href="Account.aspx"><span class="glyphicon glyphicon-log-in"></span>ACCOUNT</a></li>
+                  <li class="btn-primary"><a href="Shop Now.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>ADD-CART</a></li>
+
+            </ul>
+    </div>
+  </div>
+</nav>
+
+        <%--   <div class="loader">
+               </div>--%>
+   <%--  <%slide show %> --%>
+      
+       <script>
+           $(document).ready(function () {
+               // Activate Carousel
+               $("#myCarousel").carousel();
+
+               // Enable Carousel Indicators
+               $(".item1").click(function () {
+                   $("#myCarousel").carousel(0);
+               });
+               $(".item2").click(function () {
+                   $("#myCarousel").carousel(1);
+               });
+               $(".item3").click(function () {
+                   $("#myCarousel").carousel(2);
+               });
+               $(".item4").click(function () {
+                   $("#myCarousel").carousel(3);
+               });
+
+               // Enable Carousel Controls
+               $(".left").click(function () {
+                   $("#myCarousel").carousel("prev");
+               });
+               $(".right").click(function () {
+                   $("#myCarousel").carousel("next");
+               });
+           });
+</script>
+        <div class="container1">
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+     
+  <ol class="carousel-indicators">
+        
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+   
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    
+    <div class="item active">
+        
+  <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0006%20(2).jpg" alt="Birds Tree"/>
+              
+       
+                   
+      <div class="carousel-caption">
+          
+            <asp:Button ID="shopnow" CssClass="btn btn-default btn-xl" runat="server" Text="SHOP NOW" OnClick="shopnow_Click1"/>
+      
+        <h3>Birds Tree</h3>
+        <p>The Birds in atmosphere has a touch of New feel.</p>
+      </div>
+    </div>
+
+    <div class="item">
+         
+  <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA50009.jpg"   alt="Daddy Bear"/>
+         <div class="carousel-caption">
+                         <asp:Button ID="shopnow1" CssClass="btn btn-default btn-xl" runat="server" Text="SHOP NOW" OnClick="shopnow_Click1"/>
+
+        <h3>Daddy Bear</h3>
+        <p>The heart of DaddyBear.</p>
+      </div>
+    </div>
+
+    <div class="item">
+<img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0048.jpg"   alt="Sun Flower"/>
+      <div class="carousel-caption">
+                      <asp:Button ID="shopnow2" CssClass="btn btn-default btn-xl" runat="server" Text="SHOP NOW" OnClick="shopnow_Click1"/>
+
+        <h3>Sun Flower</h3>
+        <p>Beautiful flowers in Bucket.</p>
+      </div>
+    </div>
+
+    <div class="item">
+   <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0004.jpg" alt="Princess Doll"/>
+      <div class="carousel-caption">
+                      <asp:Button ID="shopnow3" CssClass="btn btn-default btn-xl" runat="server" Text="SHOP NOW" OnClick="shopnow_Click1"/>
+
+        <h3>Princess Doll</h3>
+        <p>Princess Doll is very Beautifull.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+            </div>
+
+<%--------------------------------------------------------------------------------%>
+       
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <h2>About Company</h2>
+        
+        <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo"></span>
+    </div>
+
+        <style>
+          
+            .text-info {
+           
+            word-break: break-all;
+            }
+        </style>
+        <div class="text-info">
+<h4>Welcome to Quilling Superstore! </h4>
+        <p>
+We are a family business, and have been serving the public since 2017. Our business started as a way for our family to make some extra money for camp, and quickly grew into a full-time operation! Since our beginning, our goal has been to provide  a wide selection of products, fast shipping and great customer service.
+
+We know you're busy, and you want your online shopping to be easy, secure, and we work hard to make that happen. We welcome your feedback about our site and service, and your suggestions for new products to carry. Be assured that each and every customer email is read and followed up on.
+  
+Have a Good day!
+            </p>
+        <br />
+   <p> First create an account by clicking the My Account link at the top of the page.
+    Then make purchases for each Painting you purchase.
+    When you log into your account then Add painting in your Cart and for see status check Status Section.
+ </p>
+    <h4>Shipping Locations:</h4>
+<p>We ship to the India via India Postal Service and IPS. We are also happy to ship  to anywhere in India. Please choose the shipping method for your country.
+</p>
+<h4>Shipping Rates:</h4>
+<p>Shipping Rates are based on weight, destination, and shipping method. Priority Mail will most likely be the cheapest shipping method. IPS Ground is often more economical. You will be able to see<br /> the cost of various shipping methods before checking out.</p>
+<h4>Shipping Time:</h4>
+<p>Quilling Superstore strives to ship your order as soon as possible. Most orders are turned around on the same or next business day. Your chosen method of shipping will determine when you will receive your order.</p>
+        <h4>Refund, Returns and Cancellation Policies:</h4>
+<p>All products can be returned unopened for exchange or refund within thirty days. Damaged products can be returned for exchange or refund at any time, and at our shipping expense. Simply send <br />an e-mail, explaining the problem, and we'll send you return instructions immediately.</p>
+     </div> <br>
+        <asp:Button ID="Getintouchbutton" CssClass="btn btn-default btn-lg" runat="server" Text="Get in Touch" />
+      
+    </div>
+    
+  </div>
+</div>
+      
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2>
+        <h4  id="heading6"><strong>MISSION:</strong></h4>
+        <p> Best Quality Better Service! We help customers in taking right decision regarding the quilling products that suits them as best as possible. We also improve the lives of people affected by education now. We are commited to providing a healthy meals to those in need. We are creating a hunger-free world will be possible if we have an awareness of our impact on the world around us. We have implemented goals to reduce the carbon footprint and to eliminate the utilization of harmful plastics.</p>
+    <br />
+          <h4  id="heading7"><strong>VISION:</strong></h4>
+<p> Quilling is the Hand-craft of arranging,curling and bending small strips of paper to create a beautiful and detailed art.The art of paper quilling began over years ago when a feather quill was used to roll the strips of paper.</p>
+ </div>
+  </div>
+</div>
+      
+<!-- Container (Services Section) -->
+         
+<div id="services" class="container-fluid text-center">
+   
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>POWER</h4>
+      <p>Knowledge Is power</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Love makes everything possible</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>Insured Guranteed</h4>
+      <p>We provide Insured Guranteed</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Go paperless and Go Green</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>we are certified </p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>We provide quilling handcraft that makes hardworker</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we have created</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+       <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0004.jpg"  alt="Paris" width="400" height="400">
+        <br />
+          <p><strong>Barbie Doll</strong></p>
+        <p>Yes, we built Barbie Doll Handmade quilling craft</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+  <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0022.jpg"   alt="New York" width="400" height="500">
+       <br />
+           <p><strong>Daddy Bear</strong></p>
+        <p>We built Daddy bear Quilling paper ripples</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+  <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0048.jpg" alt="San Francisco" width="400" height="500">
+<br />
+          <p><strong>Birds on Tree</strong></p>
+        <p>Yes, we Built this Quilling Handcraft</p>
+      </div>
+    </div>
+  </div><br>
+
+   
+  
+  
+</div>
+    <div id="Team" class="container-fluid text-center bg-grey">
+  <h2>Team</h2><br>
+  <h4>What we have Designed</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+    <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0004.jpg"  alt="Paris" width="400" height="500">
+        <br />
+          <p><strong>Bipin Kanoujiya </strong></p>
+        <p>Designer</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+  <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0022.jpg"   alt="New York" width="400" height="500">
+       <br />
+           <p><strong>Santosh kanoujiya</strong></p>
+        <p>Data Provider</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+  <img src="bootstrap-3.3.7-dist/quilingimages/Portfolio/IMG-20170902-WA0048.jpg"   alt="San Francisco" width="400" height="500">
+          <br />
+        <p><strong>Beenu Kanoujiya</strong></p>
+        <p>Quilling Handcraft Designer</p>
+      </div>
+    </div>
+  </div></div><br>
+        
+
+
+
+
+
+           <script>
+               $(document).ready(function () {
+                   // Activate Carousel
+                   $("#myCarousel1").carousel();
+
+                   // Enable Carousel Indicators
+                   $(".item1").click(function () {
+                       $("#myCarousel1").carousel(0);
+                   });
+                   $(".item2").click(function () {
+                       $("#myCarousel1").carousel(1);
+                   });
+                   $(".item3").click(function () {
+                       $("#myCarousel").carousel(2);
+                   });
+                   $(".item4").click(function () {
+                       $("#myCarousel1").carousel(3);
+                   });
+
+                   // Enable Carousel Controls
+                   $(".left").click(function () {
+                       $("#myCarousel1").carousel("prev");
+                   });
+                   $(".right").click(function () {
+                       $("#myCarousel1").carousel("next");
+                   });
+               });
+</script>
+  <div id="myCarousel1" class="carousel slide text-center" data-ride="carousel">
+       <h2>What our customers say</h2>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"This company is the best. I am so happy with the result!"<br><span>Bilal Azher</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>Sunil Dj Boy</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Could I... BE any more happy with this company?"<br><span>Santosh,Bank Employee, FriendsAlot</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+        
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <h4>Contact Us</h4>
+<h4>* Customer Service Hours:</h4><p> Monday through Friday, 10 AM to 3 PM EST
+610-693-4039*</p>
+<p>* Customer Service by phone is available for order changes and cancellations, or to place an order by phone.For all other inquiries, (order tracking, product inquires, etc.)<br />
+     please use form below.</p>
+
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> UTTAR PRADESH, INDIA</p>
+      <p><span class="glyphicon glyphicon-phone"></span> 7844862895</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> bipinkanoujia9@gmail.com</p>
+    </div>
+ 
+  </div>
+    <div class="contactbuttonalign">
+<asp:Button ID="contactbutton" runat="server" Cssclass="btn btn-lg" Text="CONTACT" OnClick="contactbutton_Click" />
+  </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+   
+      
+      
+
+ <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                © Quilling 2017
+                </div>
+              <div class="col-sm-6">
+                   <ul class="social-icons">
+
+                         <li><a href="#"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</span></a></li>
+
+                         <li><a href="#"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x" style="color:#f5a914";></i>
+  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+</span></a></li>
+
+        <li><a href="#"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x" style="color:green;"></i>
+  <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
+</span></a></li>
+                       
+                         <li><a href="#"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x" style="color:red;"></i>
+  <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+</span></a></li>
+  
+                      
+
+  <li><a href="#"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</span></a></li>
+                        
+
+                    </ul>
+                </div>
+           
+        </div>
+            </div>
+            <style>
+
+                .search {
+                  font-size:24px;
+                text-align:center;
+                }
+                    #text{
+              width: 230px;
+   height:30px;
+ margin-left:14px;
+       border-radius:25px;
+     box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+ 
+}
+
+/* When the input field gets focus, change its width to 100% */
+#text:focus {
+    width: 100%;
+}
+            </style>
+            <div class="search">
+            <asp:TextBox ID="text" runat="server"></asp:TextBox>
+                <div class="fa fa-search">
+                 </div>
+            </div>
+                                                                 
+          		<div class="right1"><a href="#">
+                          
+                            <img id=es src="bootstrap-3.3.7-dist/Images/sdsdsdsd.png" alt="" title="" border="0" /></a>
+                             
+                            
+</div> 
+     <div class="left1">Quilling Cart | Powered by <a href="#">Kanoujia's Limited</a>
+
+            </div>
+            
+    
+
+        </>
+                
+    </footer>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+    </form>
+</body>
+</html>
